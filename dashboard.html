@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="fetch_all()">
+
+    <div class="container" style="padding:0px">
+        <div class="sidebar">
+            <img width="80" src="./images/logo.svg" alt="">
+            <ul>
+                <li><a href="/dashboard.html">Home</a></li>
+                <li>Browse</li>
+                <li>Library</li>
+            </ul>
+        </div>
+
+        <div class="dashboard__main">
+
+            <div class="featured__container" id="featured"></div>
+
+            <div class="latest">
+                <h2>Latest</h2>
+                <div id="shows"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>

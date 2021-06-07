@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container" style="padding:0px">
+        <div class="sidebar">
+            <img width="80" src="./images/logo.svg" alt="">
+            <ul>
+                <li><a href="/dashboard.html">Home</a></li>
+                <li>Browse</li>
+                <li>Library</li>
+            </ul>
+        </div>
+
+        <div class="show__main">
+
+            <div class="detail__header" id="header"></div>
+            <div class="header-small" id="header-small"></div>
+
+            <div class="episodes">
+                <h2>Episodes</h2>
+                <div id="episodes"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+    <script>
+        let id = location.search.replace('?id=', '');
+        console.log(id);
+        get_show(id);
+        get_episodes(id);
+
+        let scrollpos = document.querySelector('.show__main').scrollTop
+        const header = document.querySelector("#header")
+        const header_sm = document.querySelector("#header-small")
+        const header_height = header.offsetHeight
+
+        const add_class_on_scroll = () => header_sm.classList.add("fade-in")
+        const remove_class_on_scroll = () => header_sm.classList.remove("fade-in")
+
+        document.querySelector('.show__main').addEventListener('scroll', function() { 
+            scrollpos = document.querySelector('.show__main').scrollTop;
+
+            if (scrollpos >= header_height) { add_class_on_scroll() }
+            else { remove_class_on_scroll() }
+
+            console.log(scrollpos)
+        })
+    </script>
+</body>
+</html>
